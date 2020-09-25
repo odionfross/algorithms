@@ -66,6 +66,43 @@ class SLL {
         }
         return this
     }
+    
+    //Create method max() to return list’s largest val.
+    max(){
+        var max = this.head.value
+        var monkey = this.head.next
+        while(monkey){
+            if(max<monkey.value){
+                max = monkey.value
+            }
+            monkey=monkey.next
+        }
+        return max
+    }
+
+    //Create min(node) to return list’s smallest val.
+    min(){
+        var min = this.head.value
+        var monkey = this.head.next
+        while(monkey){
+            if(min>monkey.value){
+                min = monkey.value
+            }
+            monkey=monkey.next
+        }
+        return min
+    }
+
+    //Create average() to return average val.
+    average(){
+        var sum = 0;
+        var monkey=this.head;
+        while(monkey){
+            sum += monkey.value
+            monkey=monkey.next
+        }
+        return sum/this.length()
+    }
 }
 
 var one_sll = new SLL(1);
@@ -74,4 +111,7 @@ var one_sll = new SLL(1);
 //console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).front());
 //console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).contains(5));
 //console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).length());
-console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).display_list());
+//console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).display_list());
+console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).max());
+console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).min());
+console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).average());
