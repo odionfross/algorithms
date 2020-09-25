@@ -56,6 +56,16 @@ class SLL {
         }
         return count
     }
+
+    /* Create display() that returns a string containing all list values. Build what you wish console.log(myList) did! */
+    display_list(){
+        var monkey = this.head
+        while(monkey){
+            console.log(`Current Node: ${monkey}, Current Value: ${monkey.value}`)
+            monkey = monkey.next;
+        }
+        return this
+    }
 }
 
 var one_sll = new SLL(1);
@@ -63,4 +73,5 @@ var one_sll = new SLL(1);
 //console.log(one_sll.addFront(3).addFront(5).addFront(7).removeFront(11).addFront(9));
 //console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).front());
 //console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).contains(5));
-console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).length());
+//console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).length());
+console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).display_list());
