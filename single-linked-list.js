@@ -103,6 +103,35 @@ class SLL {
         }
         return sum/this.length()
     }
+
+    //Create a method that returns the last value in the list.
+    back(){
+        var monkey = this.head
+        while(monkey.next){
+            monkey=monkey.next
+        }
+        return monkey.value
+    }
+
+    //Create a method that removes the last ListNode in the list and returns the new list.
+    removeBack(){
+        var monkey=this.head;
+        while(monkey.next.next){
+            monkey=monkey.next;
+        }
+        monkey.next = null;
+        return this
+    }
+
+    //Create a method that creates a Node with given value and inserts it at end of your linked list.
+    addBack(value){
+        var monkey=this.head
+        while(monkey.next){
+            monkey=monkey.next
+        }
+        monkey.next = new Node(value);
+        return this
+    }
 }
 
 var one_sll = new SLL(1);
@@ -112,6 +141,9 @@ var one_sll = new SLL(1);
 //console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).contains(5));
 //console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).length());
 //console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).display_list());
-console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).max());
-console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).min());
-console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).average());
+// console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).max());
+// console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).min());
+// console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).average());
+console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).back());
+console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).removeBack().back());
+console.log(one_sll.addFront(3).addFront(5).addFront(7).addFront(11).addFront(9).addBack(9).back());
